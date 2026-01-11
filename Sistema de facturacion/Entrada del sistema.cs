@@ -23,7 +23,10 @@ namespace Sistema_de_facturacion
 
         }
 
-      
+       
+
+
+
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
@@ -32,30 +35,56 @@ namespace Sistema_de_facturacion
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-              
 
-            Conexion.Conectar();
-            string consulta = "Select * from Usuario where Nom_usu=  '" + Usuarioent.Text + "' and Cla_usu = '" + Contrasenaent.Text + "'";
-            SqlCommand comando = new SqlCommand(consulta, Conexion.Conectar());
-            SqlDataReader lector;
-            lector = comando.ExecuteReader();
-            if (lector.HasRows == true)
+            try
             {
-                MessageBox.Show("Bienvenido al sistema");
-                Menu_principal frm = new Menu_principal();
-                frm.Show();
-                this.Hide();
+                using (SqlConnection cn = Conexion.Conectar())
+                {
+                    SqlCommand cmd = new SqlCommand("ValidarUsuario", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.Parameters.Add("@Nom_usu", SqlDbType.VarChar, 30).Value = Usuarioent.Text.Trim();
+                    cmd.Parameters.Add("@Cla_usu", SqlDbType.VarChar, 15).Value = Contrasenaent.Text.Trim();
+
+                    cmd.Parameters.Add("@Cod_usu", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Rol", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    int cod = Convert.ToInt32(cmd.Parameters["@Cod_usu"].Value);
+                    string rol = cmd.Parameters["@Rol"].Value?.ToString();
+                    string msg = cmd.Parameters["@Mensaje"].Value.ToString();
+
+                    MessageBox.Show(
+                        "DEBUG LOGIN\nCod: " + cod + "\nRol: [" + rol + "]"
+                    );
+
+                    if (cod > 0)
+                    {
+                        Sesion.Usuario = Usuarioent.Text.Trim();
+                        Sesion.Rol = rol?.Trim();
+
+                        Menu_principal frm = new Menu_principal();
+                        frm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show(msg);
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuario y/o contrasena incorrecta");
-                this.Usuarioent.Text = "";
-                this.Contrasenaent.Text = "";
-                this.Usuarioent.Focus();
-
+                MessageBox.Show(ex.ToString());
             }
-        }
+        
+
+
+
+
+    }
 
         private void Usuarioent_KeyPress(object sender, KeyPressEventArgs e)
         {

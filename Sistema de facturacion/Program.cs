@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace Sistema_de_facturacion
 {
+    
     static class Program
     {
         /// <summary>

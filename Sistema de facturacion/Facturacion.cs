@@ -25,7 +25,7 @@ namespace Sistema_de_facturacion
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
-            Articulofac.Enabled = false;
+             Articulofac.Enabled = false;
             Descripcionfac.Enabled = false;
             Preciofac.Enabled = false;
             Cantidadfac.Enabled = false;
@@ -294,9 +294,9 @@ namespace Sistema_de_facturacion
                 //Guardar
 
                 Conexion.Conectar();
-                string insertar = "INSERT INTO Factura(Num_fac,Hor_fac,Fec_fac,Cod_Cli,Tip_fac,Nom_cli,Sub_Tot_fac,Des_fac,Itb_fac,Tot_fac,PDF_fac,Pit_fac) Values(@Num_fac,@Hor_fac,@Fec_fac,@Cod_Cli,@Tip_fac,@Nom_cli,@Sub_Tot_fac,@Des_fac,@Itb_fac,@Tot_fac,@PDF_fac,@Pit_fac)";
+                string insertar = "INSERT INTO Factura(Hor_fac,Fec_fac,Cod_Cli,Tip_fac,Nom_cli,Sub_Tot_fac,Des_fac,Itb_fac,Tot_fac,PDF_fac,Pit_fac) Values(@Hor_fac,@Fec_fac,@Cod_Cli,@Tip_fac,@Nom_cli,@Sub_Tot_fac,@Des_fac,@Itb_fac,@Tot_fac,@PDF_fac,@Pit_fac)";
                 SqlCommand cmd1 = new SqlCommand(insertar, Conexion.Conectar());
-                cmd1.Parameters.AddWithValue("@Num_fac", Numerofac.Text);
+                
                 cmd1.Parameters.AddWithValue("@Hor_fac", Horafac.Text);
                 cmd1.Parameters.AddWithValue("@Fec_fac", Fechafac.Text);
                 cmd1.Parameters.AddWithValue("@Cod_cli", Clientefac.Text);
