@@ -34,6 +34,8 @@ namespace Sistema_de_facturacion
             this.Clientebutton = new System.Windows.Forms.RadioButton();
             this.Articulobutton = new System.Windows.Forms.RadioButton();
             this.Consultas = new System.Windows.Forms.GroupBox();
+            this.CXCobrar = new System.Windows.Forms.RadioButton();
+            this.Stocik = new System.Windows.Forms.RadioButton();
             this.Ventas = new System.Windows.Forms.RadioButton();
             this.Procesos = new System.Windows.Forms.GroupBox();
             this.Facturacion = new System.Windows.Forms.RadioButton();
@@ -41,6 +43,7 @@ namespace Sistema_de_facturacion
             this.Clientes = new System.Windows.Forms.RadioButton();
             this.Articulos = new System.Windows.Forms.RadioButton();
             this.Salir = new System.Windows.Forms.Button();
+            this.Reporteventas = new System.Windows.Forms.RadioButton();
             this.RM.SuspendLayout();
             this.Consultas.SuspendLayout();
             this.Procesos.SuspendLayout();
@@ -103,6 +106,8 @@ namespace Sistema_de_facturacion
             // Consultas
             // 
             this.Consultas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Consultas.Controls.Add(this.CXCobrar);
+            this.Consultas.Controls.Add(this.Stocik);
             this.Consultas.Controls.Add(this.Ventas);
             this.Consultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Consultas.Location = new System.Drawing.Point(63, 265);
@@ -113,6 +118,32 @@ namespace Sistema_de_facturacion
             this.Consultas.TabIndex = 1;
             this.Consultas.TabStop = false;
             this.Consultas.Text = "Consultas";
+            // 
+            // CXCobrar
+            // 
+            this.CXCobrar.AutoSize = true;
+            this.CXCobrar.Location = new System.Drawing.Point(16, 158);
+            this.CXCobrar.Margin = new System.Windows.Forms.Padding(2);
+            this.CXCobrar.Name = "CXCobrar";
+            this.CXCobrar.Size = new System.Drawing.Size(215, 29);
+            this.CXCobrar.TabIndex = 6;
+            this.CXCobrar.TabStop = true;
+            this.CXCobrar.Text = "Cuentas por cobrar";
+            this.CXCobrar.UseVisualStyleBackColor = true;
+            this.CXCobrar.Click += new System.EventHandler(this.CXCobrar_Click);
+            // 
+            // Stocik
+            // 
+            this.Stocik.AutoSize = true;
+            this.Stocik.Location = new System.Drawing.Point(16, 106);
+            this.Stocik.Margin = new System.Windows.Forms.Padding(2);
+            this.Stocik.Name = "Stocik";
+            this.Stocik.Size = new System.Drawing.Size(261, 29);
+            this.Stocik.TabIndex = 5;
+            this.Stocik.TabStop = true;
+            this.Stocik.Text = "Consulta de stock bajos";
+            this.Stocik.UseVisualStyleBackColor = true;
+            this.Stocik.Click += new System.EventHandler(this.Stocik_Click);
             // 
             // Ventas
             // 
@@ -156,6 +187,7 @@ namespace Sistema_de_facturacion
             // Reportes
             // 
             this.Reportes.BackColor = System.Drawing.Color.Blue;
+            this.Reportes.Controls.Add(this.Reporteventas);
             this.Reportes.Controls.Add(this.Clientes);
             this.Reportes.Controls.Add(this.Articulos);
             this.Reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,6 +238,19 @@ namespace Sistema_de_facturacion
             this.Salir.UseVisualStyleBackColor = true;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
+            // Reporteventas
+            // 
+            this.Reporteventas.AutoSize = true;
+            this.Reporteventas.Location = new System.Drawing.Point(17, 143);
+            this.Reporteventas.Margin = new System.Windows.Forms.Padding(2);
+            this.Reporteventas.Name = "Reporteventas";
+            this.Reporteventas.Size = new System.Drawing.Size(245, 29);
+            this.Reporteventas.TabIndex = 6;
+            this.Reporteventas.TabStop = true;
+            this.Reporteventas.Text = "Reporte ventas diarias";
+            this.Reporteventas.UseVisualStyleBackColor = true;
+            this.Reporteventas.Click += new System.EventHandler(this.Reporteventas_Click);
+            // 
             // Menu_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,5 +294,8 @@ namespace Sistema_de_facturacion
         private System.Windows.Forms.RadioButton Articulobutton;
         private System.Windows.Forms.RadioButton Clientebutton;
         private System.Windows.Forms.RadioButton Usuariobutton;
+        private System.Windows.Forms.RadioButton Stocik;
+        private System.Windows.Forms.RadioButton CXCobrar;
+        private System.Windows.Forms.RadioButton Reporteventas;
     }
 }

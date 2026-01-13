@@ -283,5 +283,6 @@ namespace Sistema_de_facturacion
             RA RPA = new RA();
             RPA.Show();
         }
+
     }
 }

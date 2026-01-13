@@ -42,7 +42,7 @@ namespace Sistema_de_facturacion
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1198, 688);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // crystalReportViewer2
@@ -54,14 +54,14 @@ namespace Sistema_de_facturacion
             this.crystalReportViewer2.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer2.Name = "crystalReportViewer2";
             this.crystalReportViewer2.ReportSource = this.DRA1;
-            this.crystalReportViewer2.Size = new System.Drawing.Size(800, 450);
+            this.crystalReportViewer2.Size = new System.Drawing.Size(1198, 688);
             this.crystalReportViewer2.TabIndex = 1;
             // 
             // RA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1198, 688);
             this.Controls.Add(this.crystalReportViewer2);
             this.Controls.Add(this.crystalReportViewer1);
             this.MaximizeBox = false;

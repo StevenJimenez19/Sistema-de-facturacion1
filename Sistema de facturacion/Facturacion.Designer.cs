@@ -495,6 +495,7 @@ namespace Sistema_de_facturacion
             this.BuscarNumfac.TabIndex = 90;
             this.BuscarNumfac.Text = "Buscar";
             this.BuscarNumfac.UseVisualStyleBackColor = false;
+            this.BuscarNumfac.Click += new System.EventHandler(this.BuscarNumfac_Click);
             // 
             // Buscarclifac
             // 

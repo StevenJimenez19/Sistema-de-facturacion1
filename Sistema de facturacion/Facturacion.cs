@@ -385,6 +385,12 @@ namespace Sistema_de_facturacion
             rn.Numero.Text = this.Numerofac.Text;
             rn.ShowDialog();
         }
+
+        private void BuscarNumfac_Click(object sender, EventArgs e)
+        {
+            Cliente frm = new Cliente();
+            frm.Show();
+        }
     }
 
 }

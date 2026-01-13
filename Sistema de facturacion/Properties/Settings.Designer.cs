@@ -33,5 +33,16 @@ namespace Sistema_de_facturacion.Properties {
                 return ((string)(this["FacturacionConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-PHTCG9K\\SQLEXPRESS;Initial Catalog=Facturacion;Integrated Sec" +
+            "urity=True")]
+        public string FacturacionConnectionString1 {
+            get {
+                return ((string)(this["FacturacionConnectionString1"]));
+            }
+        }
     }
 }
